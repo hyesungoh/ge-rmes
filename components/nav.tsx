@@ -1,6 +1,30 @@
+import { useState, useEffect, useRef } from "react";
+
 export default function Nav() {
+    const [scrollY, setScrollY] = useState<number>(0);
+    const navRef = useRef<HTMLElement | null>(null);
+
+    const NAV_TRANSFORM_OFFSET: number = 300;
+
+    const handleScroll = () => {
+        const currentOffset = window.pageYOffset;
+        if (currentOffset > NAV_TRANSFORM_OFFSET) {
+            navRef.current.classList.add("scrolled");
+        } else {
+            navRef.current.classList.remove("scrolled");
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <nav>
+        <nav ref={navRef}>
             <h1>Gérmes</h1>
             <div className="element">
                 <span>About</span>
@@ -20,10 +44,15 @@ export default function Nav() {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    transition: background-color 0.3s;
                 }
 
                 .element > span {
                     margin: 0px 0.5rem;
+                }
+
+                .scrolled {
+                    background-color: rgba(255, 255, 255, 0.4);
                 }
             `}</style>
         </nav>

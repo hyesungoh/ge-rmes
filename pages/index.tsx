@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Nav from "components/nav";
 import BgImage from "components/bgImage";
+import About from "components/about";
 
 export default function Home() {
     return (
@@ -17,7 +18,9 @@ export default function Home() {
 
             <Nav />
             <BgImage />
-            <main>asd</main>
+            <main>
+                <About />
+            </main>
 
             <style jsx>{`
                 .root {
@@ -35,6 +38,8 @@ export default function Home() {
                     z-index: 2;
                     margin-top: 60vh;
                     background-color: white;
+
+                    padding: 1rem 1.4rem;
                 }
             `}</style>
 
