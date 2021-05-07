@@ -39,7 +39,7 @@ export default function Nav() {
                     width: 100vw;
                     height: 70px;
                     background-color: white;
-                    padding: 0px 2rem;
+                    padding: 0px calc(2vw + 1.4rem);
                     z-index: 3;
                     display: flex;
                     justify-content: space-between;
@@ -49,6 +49,11 @@ export default function Nav() {
 
                 .element > span {
                     margin: 0px 0.5rem;
+                }
+
+                span,
+                h1 {
+                    cursor: pointer;
                 }
 
                 .scrolled {

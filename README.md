@@ -12,6 +12,8 @@ Next.js를 써볼 겸, 2021-1 팀창업입문을 위한 웹
 
 ```terminal
 npx create-next-app projectname
+
+npm run dev
 ```
 
 -   #### Using TypeScript in Next.js

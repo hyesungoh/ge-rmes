@@ -34,7 +34,7 @@ export default function Home() {
 
                 main {
                     width: 96vw;
-                    height: 100vh;
+                    min-height: 100vh;
                     z-index: 2;
                     margin-top: 60vh;
                     background-color: white;
